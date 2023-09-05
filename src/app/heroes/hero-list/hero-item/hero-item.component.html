@@ -1,20 +1,17 @@
-<section class="row">
-  <div class="col-sm-4">
-    <h2 class="list-group-item-heading">{{ hero.name | titlecase }}</h2>
-    <img [src]="hero.imagePath" alt="{{ hero.name }}" class="img-responsive" style="max-height: 100px;">
+<div class="col-sm">
+  <div class="card">
+    <img class="card-img-top" [src]="hero.imagePath" alt="{{ hero.name }}">
+    <div class="card-body">
+      <h5 class="card-title">{{ hero.name | titlecase }}</h5>
+      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+    </div>
+    <ul class="list-group list-group-flush"
+    *ngFor="let powerstat of hero.powerstats | keyvalue">
+      <li class="list-group-item">{{ powerstat.key }} <span>{{ powerstat.value == "null" ? 0 : powerstat.value }}</span></li>
+    </ul>
+    <div class="card-body">
+      <button class="btn btn-info">Ver detalle</button>
+      <button class="btn btn-danger">Eliminar</button>
+    </div>
   </div>
-  <div class="col-sm-5">
-    <h4 class="list-group-item-heading">Powerstats</h4>
-    <table>
-      <tr class="list-group-item-text"
-      *ngFor="let powerstat of hero.powerstats | keyvalue">
-        <td>{{ powerstat.key }}</td>
-        <td>{{ powerstat.value }}</td>
-      </tr>
-    </table>
-  </div>
-  <div class="col-sm-3">
-    <button class="btn btn-info">Ver detalle</button>
-    <button class="btn btn-danger">Eliminar</button>
-  </div>
-</section>
+</div>

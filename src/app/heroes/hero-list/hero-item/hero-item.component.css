@@ -1,0 +1,12 @@
+.list-group-item {
+  padding: 0.25rem 1.25rem;
+}
+
+.card {
+  width: 15rem;
+  margin: 2rem;
+}
+
+.card-body .btn {
+  margin: 0 3px;
+}
