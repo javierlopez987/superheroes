@@ -34,7 +34,15 @@ export class HeroService {
 
   constructor() {}
 
-  getHeroes() {
+  getAll() {
     return this.heroes.slice();
+  }
+
+  add(hero: Hero) {
+    return this.heroes.push(hero);
+  }
+
+  delete(hero: Hero) {
+    return this.heroes.push(hero);
   }
 }
