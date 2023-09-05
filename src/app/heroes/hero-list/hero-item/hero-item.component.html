@@ -1,17 +1,20 @@
 <section class="row">
-  <div class="col-sm-5">
+  <div class="col-sm-4">
     <h2 class="list-group-item-heading">{{ hero.name | titlecase }}</h2>
     <img [src]="hero.imagePath" alt="{{ hero.name }}" class="img-responsive" style="max-height: 100px;">
   </div>
-  <div class="col-sm-7">
-    <h4>Powerstats</h4>
-    <p class="list-group-item-text"
-    *ngFor="let powerstat of hero.powerstats; let i = index">{{ powerstat }}</p>
+  <div class="col-sm-5">
+    <h4 class="list-group-item-heading">Powerstats</h4>
+    <table>
+      <tr class="list-group-item-text"
+      *ngFor="let powerstat of hero.powerstats | keyvalue">
+        <td>{{ powerstat.key }}</td>
+        <td>{{ powerstat.value }}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="col-sm-3">
+    <button class="btn btn-info">Ver detalle</button>
+    <button class="btn btn-danger">Eliminar</button>
   </div>
 </section>
-<div class="row">
-  <div class="col-sm-12">
-    <button class="btn btn-info">Ver detalle</button>
-    <button class="btn btn-danger">Quitar del grupo</button>
-  </div>
-</div>
