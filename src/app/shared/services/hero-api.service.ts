@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HeroApiService {
-  private base_url = "https://superheroapi.com/api/";
-  private access_token = "10159966285628737";
+  private baseUrl = environment.heroApi.baseUrl;
+  private accessToken = environment.heroApi.accessToken;
 
   constructor(private http: HttpClient) { }
 
   searchByName(name: string) {
-    const searchEndpoint = "/search/"
-    return this.http.get(this.base_url + this.access_token + searchEndpoint + name);
+    const searchEndpoint = environment.heroApi.searchEndpoint;
+    return this.http.get(this.baseUrl + this.accessToken + searchEndpoint + name);
   }
 }

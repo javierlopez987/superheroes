@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  heroApi: {
+    baseUrl: "https://superheroapi.com/api/",
+    accessToken: "10159966285628737",
+    searchEndpoint: "/search/"
+  }
 };
 
 /*
