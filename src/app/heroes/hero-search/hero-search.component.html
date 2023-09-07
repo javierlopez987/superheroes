@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form class="form-inline" 
+        [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+        <div class="form-group mx-sm-3 mb-2">
+          <label for="inputSearch" class="sr-only">Superhero</label>
+          <input formControlName="name"
+            type="text" class="form-control" id="inputSearch" placeholder="Search for a superhero">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Search</button>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <app-hero-item *ngFor="let hero of heroes" [hero]="hero" [isJoiningUp]="true"></app-hero-item>
+  </div>
+</div>

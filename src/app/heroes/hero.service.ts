@@ -5,7 +5,7 @@ import { Hero } from './hero.model';
   providedIn: 'root'
 })
 export class HeroService {
-  private heroes: Hero[] = [
+  private team: Hero[] = [
     new Hero(
       "batman", 
       "https://www.superherodb.com/pictures2/portraits/10/100/10441.jpg",
@@ -82,15 +82,15 @@ export class HeroService {
 
   constructor() {}
 
-  getAll() {
-    return this.heroes.slice();
+  getTeam() {
+    return this.team.slice();
   }
 
   add(hero: Hero) {
-    return this.heroes.push(hero);
+    return this.team.push(hero);
   }
 
   delete(hero: Hero) {
-    return this.heroes.push(hero);
+    return this.team.filter((h) => h.name != hero.name);
   }
 }

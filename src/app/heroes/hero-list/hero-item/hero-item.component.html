@@ -10,8 +10,9 @@
       <li class="list-group-item">{{ powerstat.key }} <span>{{ powerstat.value == "null" ? 0 : powerstat.value }}</span></li>
     </ul>
     <div class="card-body">
-      <button class="btn btn-info">More details</button>
-      <button class="btn btn-danger">Delete</button>
+      <button class="btn btn-info" *ngIf="!isJoiningUp">More details</button>
+      <button class="btn btn-danger" *ngIf="!isJoiningUp">Delete</button>
+      <button class="btn btn-success" *ngIf="isJoiningUp">Join up!</button>
     </div>
   </div>
 </div>
