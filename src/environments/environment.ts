@@ -6,7 +6,7 @@ export const environment = {
   production: false,
 
   heroApi: {
-    baseUrl: "https://superheroapi.com/api/",
+    baseUrl: "http://localhost:4200/api/",
     accessToken: "10159966285628737",
     searchEndpoint: "/search/"
   }
