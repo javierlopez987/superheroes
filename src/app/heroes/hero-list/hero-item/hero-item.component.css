@@ -1,10 +1,19 @@
 .list-group-item {
-  padding: 0.25rem 1.25rem;
+  padding: 0.10rem 1.75rem 0.10rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .card {
   width: 15rem;
   margin: 2rem;
+}
+
+.card-img-top {
+  width: 60%;
+  align-self: center;
+  padding: 1.25rem 0;
+  border-radius: 10%;
 }
 
 .card-body .btn {

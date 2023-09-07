@@ -1,6 +1,16 @@
 export class Hero {
+  name: string;
+  imagePath: string;
+  powerstats: {
+    intelligence: string,
+    strength: string,
+    speed: string,
+    durability: string,
+    power: string,
+    combat: string
+  }
 
-  constructor(public name: string, public imagePath: string, public powerstats: any) {
+  constructor(name: string, imagePath: string, powerstats : any) {
     this.name = name;
     this.imagePath = imagePath;
     this.powerstats = powerstats;
