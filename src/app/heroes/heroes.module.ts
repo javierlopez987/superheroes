@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { HeroesRoutingModule } from './heroes-routing.module';
 import { HeroesComponent } from './heroes.component';
 import { HeroItemComponent } from './hero-list/hero-item/hero-item.component';
 import { HeroListComponent } from './hero-list/hero-list.component';
@@ -17,12 +18,10 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HeroesRoutingModule
   ],
   exports: [
-    HeroesComponent,
-    HeroListComponent,
-    HeroItemComponent
   ]
 })
 export class HeroesModule { }

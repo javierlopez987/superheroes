@@ -2,10 +2,15 @@
   <span class="navbar-brand mb-0 h1">Superheroes Team</span>
   <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a class="nav-link" routerLink="heroes" routerLinkActive="active">The Dream Team</a>
+      <a class="nav-link" 
+        routerLink="heroes" 
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">The Dream Team</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="search" routerLinkActive="active">Search for a Hero</a>
+      <a class="nav-link" 
+        [routerLink]="['heroes', 'search']" 
+        routerLinkActive="active">Search for a Hero</a>
     </li>
   </ul>
 </nav>
