@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
+
 import { Hero } from './hero.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HeroService {
+  public teamChanged: Subject<Hero[]>;
   private team: Hero[] = [
     new Hero(
       "batman", 
@@ -80,17 +83,22 @@ export class HeroService {
     )
   ];
 
-  constructor() {}
+  constructor() {
+    this.teamChanged = new Subject();
+  }
 
   getTeam() {
     return this.team.slice();
   }
 
   add(hero: Hero) {
-    return this.team.push(hero);
+    this.team.push(hero);
+    this.teamChanged.next(this.team);
   }
 
   delete(hero: Hero) {
-    return this.team.filter((h) => h.name != hero.name);
+    const newTeam = this.team.filter((h) => h.name != hero.name);
+    this.team = newTeam;
+    this.teamChanged.next(this.team);
   }
 }

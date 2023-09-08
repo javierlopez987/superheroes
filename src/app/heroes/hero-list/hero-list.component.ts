@@ -14,6 +14,10 @@ export class HeroListComponent implements OnInit {
 
   ngOnInit(): void {
     this.heroes = this.heroService.getTeam();
+    this.heroService.teamChanged
+      .subscribe(heroes =>  {
+        this.heroes = heroes
+      });
   }
 
 }

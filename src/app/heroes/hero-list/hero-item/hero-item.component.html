@@ -10,9 +10,9 @@
       <li class="list-group-item">{{ powerstat.key | titlecase }} <span>{{ powerstat.value == "null" ? 0 : powerstat.value }}</span></li>
     </ul>
     <div class="card-body">
-      <button class="btn btn-info" *ngIf="!isJoiningUp">More details</button>
-      <button class="btn btn-danger" *ngIf="!isJoiningUp">Expel</button>
-      <button class="btn btn-success" *ngIf="isJoiningUp">Join up!</button>
+      <button class="btn btn-info" *ngIf="!isJoiningUp" disabled>More details</button>
+      <button class="btn btn-danger" *ngIf="!isJoiningUp" (click)="onExpel(hero)">Expel</button>
+      <button class="btn btn-success" *ngIf="isJoiningUp" (click)="onJoinUp(hero)">Join up!</button>
     </div>
   </div>
 </div>
